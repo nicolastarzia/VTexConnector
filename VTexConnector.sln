@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTexConnector", "VTexConnector\VTexConnector.csproj", "{E89B8F18-44D7-4805-B4E5-59A060BED933}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTexConnectorTests", "VTexConnectorTests\VTexConnectorTests.csproj", "{9DE0D780-5D41-4977-B934-13F35C1B352B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E89B8F18-44D7-4805-B4E5-59A060BED933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E89B8F18-44D7-4805-B4E5-59A060BED933}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E89B8F18-44D7-4805-B4E5-59A060BED933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE0D780-5D41-4977-B934-13F35C1B352B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE0D780-5D41-4977-B934-13F35C1B352B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE0D780-5D41-4977-B934-13F35C1B352B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE0D780-5D41-4977-B934-13F35C1B352B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
