@@ -13,7 +13,6 @@ namespace VTexConnector.Pricing
     {
         public Price() : base()
         {
-            throw new NotImplementedException("To be develop!");
         }
 
         public async Task<PriceModel> GetPriceAsync(int id)
@@ -30,14 +29,16 @@ namespace VTexConnector.Pricing
             return await GetObjectFromUri<List<PriceModel>>(productUrl);
         }
 
-        public async void CreateEditPriceAsync(int itemId, PriceModel price)
+        public async Task<bool> CreateEditPriceAsync(int itemId, PriceModel price)
         {
-            string productUrl = Util.FormatUrl(Consts.PRICE_GETFIXEDPRICES);
+            string productUrl = Util.FormatUrl(Consts.PRICE_CREATEEDITPRICES);
             productUrl = productUrl.Replace("{{itemId}}", itemId.ToString());
 
             var priceModel = JsonConvert.SerializeObject(price);
+            var httpResponse = await PutToUri(productUrl, new StringContent(priceModel));
 
-            var strRetorno = await this.HttpClient.PutAsync(productUrl, new StringContent(priceModel));
+            return httpResponse.IsSuccessStatusCode;
+
         }
 
     }

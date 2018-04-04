@@ -25,6 +25,6 @@ namespace VTexConnector
         internal static string OMS_CHANGEORDERSTATE = "http://{{accountName}}.{{environment}}.com.br/api/oms/pvt/orders/{{orderId}}/changestate/{{status}}";
 
         internal static string INVENTORY_UPDATEINVENTORYBYSKUWAREHOUSE = "http://logistics.{{environment}}.com.br/api/logistics/pvt/inventory/skus/{{skuId}}/warehouses/{{warehouseId}}?an={{accountName}}";
-
+        internal static string INVENTORY_GETBYSKU = "http://logistics.{{environment}}.com.br/api/logistics/pvt/inventory/skus/{{skuId}}?an={{accountName}}";
     }
 }

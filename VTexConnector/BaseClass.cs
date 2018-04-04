@@ -68,5 +68,17 @@ namespace VTexConnector
         {
             return await this.HttpClient.PostAsync(productUri, content);
         }
+
+
+        /// <summary>
+        /// Put object to Uri 
+        /// </summary>
+        /// <typeparam name="T">Type of object to return</typeparam>
+        /// <param name="productUri">URL to insert object</param>
+        /// <returns></returns>
+        protected async Task<HttpResponseMessage> PutToUri(string productUri, HttpContent content = null)
+        {
+            return await this.HttpClient.PutAsync(productUri, content);
+        }
     }
 }
