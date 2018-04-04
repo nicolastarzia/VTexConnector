@@ -15,11 +15,11 @@ namespace VTexConnector.OMS
         {
         }
 
-        public async Task<object> GetOrderByIdAsync(int orderId)
+        public async Task<Order> GetOrderByIdAsync(int orderId)
         {
             string orderUrl = Util.FormatUrl(Consts.OMS_GETORDER);
             orderUrl = orderUrl.Replace("{{orderId}}", orderId.ToString());
-            return await GetObjectFromUri<object>(orderUrl);
+            return await GetObjectFromUri<Order>(orderUrl);
         }
 
         public async Task<OrderResponse> ListOrdersByStatusAsync(string orderStatus)
