@@ -13,7 +13,6 @@ namespace VTexConnector.Logistics
     {
         public Inventory() : base()
         {
-            throw new NotImplementedException("To be develop!");
         }
 
         public async Task<InventoryModel> GetPriceAsync(int id)
