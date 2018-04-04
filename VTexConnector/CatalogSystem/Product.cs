@@ -25,7 +25,7 @@ namespace VTexConnector.CatalogSystem
         {
             string productUrl = Util.FormatUrl(Consts.PRODUCT_GETBYID);
             productUrl = productUrl.Replace("{{productId}}", id.ToString());
-            return await ExtractObject<ProductModel>(productUrl);
+            return await GetObjectFromUri<ProductModel>(productUrl);
         }
 
         /// <summary>
@@ -37,7 +37,23 @@ namespace VTexConnector.CatalogSystem
         {
             string productUrl = Util.FormatUrl(Consts.PRODUCT_GETBYREFID);
             productUrl = productUrl.Replace("{{refId}}", refId);
-            return await ExtractObject<ProductModel>(productUrl);
+            return await GetObjectFromUri<ProductModel>(productUrl);
+        }
+
+        /// <summary>
+        /// Get product and all sku related by Category Id
+        /// </summary>
+        /// <param name="categoryId">Category Id</param>
+        /// <param name="from">register from</param>
+        /// <param name="to">register to</param>
+        /// <returns></returns>
+        public async Task<ProductAndSkuResponse> GetProductAndSkuIds(int categoryId, int from, int to)
+        {
+            string productUrl = Util.FormatUrl(Consts.PRODUCT_PRODUCTANDSKUIDS);
+            productUrl = productUrl.Replace("{{categoryId}}", categoryId.ToString());
+            productUrl = productUrl.Replace("{{from}}", from.ToString());
+            productUrl = productUrl.Replace("{{to}}", to.ToString());
+            return await GetObjectFromUri<ProductAndSkuResponse>(productUrl);
         }
 
     }

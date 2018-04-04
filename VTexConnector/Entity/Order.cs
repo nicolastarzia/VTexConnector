@@ -1,0 +1,185 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace VTexConnector.Entity
+{
+        public class Item
+        {
+            public string seller { get; set; }
+            public int quantity { get; set; }
+            public string description { get; set; }
+            public string ean { get; set; }
+            public string refId { get; set; }
+            public string id { get; set; }
+            public string productId { get; set; }
+            public int sellingPrice { get; set; }
+            public int price { get; set; }
+        }
+
+        public class Order
+        {
+            public string orderId { get; set; }
+            public DateTime creationDate { get; set; }
+            public string clientName { get; set; }
+            public List<Item> items { get; set; }
+            public int totalValue { get; set; }
+            public string paymentNames { get; set; }
+            public string status { get; set; }
+            public string statusDescription { get; set; }
+            public string marketPlaceOrderId { get; set; }
+            public string sequence { get; set; }
+            public string salesChannel { get; set; }
+            public string affiliateId { get; set; }
+            public string origin { get; set; }
+            public bool workflowInErrorState { get; set; }
+            public bool workflowInRetry { get; set; }
+            public string lastMessageUnread { get; set; }
+            public DateTime? ShippingEstimatedDate { get; set; }
+            public bool orderIsComplete { get; set; }
+            public object listId { get; set; }
+            public object listType { get; set; }
+        }
+
+        public class Item2
+        {
+            public string name { get; set; }
+            public int quantity { get; set; }
+            public string url { get; set; }
+        }
+
+        public class Facet
+        {
+            public string name { get; set; }
+            public string type { get; set; }
+            public List<Item2> items { get; set; }
+            public string rangeUrlTemplate { get; set; }
+        }
+
+        public class Paging
+        {
+            public int total { get; set; }
+            public int pages { get; set; }
+            public int currentPage { get; set; }
+            public int perPage { get; set; }
+        }
+
+        public class Fulfillment
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public double Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public double StdDev { get; set; }
+            public int Sum { get; set; }
+            public long SumOfSquares { get; set; }
+            public object Facets { get; set; }
+        }
+
+        public class Marketplace
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public double Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public double StdDev { get; set; }
+            public int Sum { get; set; }
+            public long SumOfSquares { get; set; }
+            public object Facets { get; set; }
+        }
+
+        public class Origin
+        {
+            public Fulfillment Fulfillment { get; set; }
+            public Marketplace Marketplace { get; set; }
+        }
+
+        public class Facets
+        {
+            public Origin origin { get; set; }
+        }
+
+        public class TotalValue
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public double Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public double StdDev { get; set; }
+            public int Sum { get; set; }
+            public long SumOfSquares { get; set; }
+            public Facets Facets { get; set; }
+        }
+
+        public class Fulfillment2
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public int Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public int StdDev { get; set; }
+            public int Sum { get; set; }
+            public int SumOfSquares { get; set; }
+            public object Facets { get; set; }
+        }
+
+        public class Marketplace2
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public double Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public double StdDev { get; set; }
+            public int Sum { get; set; }
+            public int SumOfSquares { get; set; }
+            public object Facets { get; set; }
+        }
+
+        public class Origin2
+        {
+            public Fulfillment2 Fulfillment { get; set; }
+            public Marketplace2 Marketplace { get; set; }
+        }
+
+        public class Facets2
+        {
+            public Origin2 origin { get; set; }
+        }
+
+        public class TotalItems
+        {
+            public int Count { get; set; }
+            public int Max { get; set; }
+            public double Mean { get; set; }
+            public int Min { get; set; }
+            public int Missing { get; set; }
+            public double StdDev { get; set; }
+            public int Sum { get; set; }
+            public int SumOfSquares { get; set; }
+            public Facets2 Facets { get; set; }
+        }
+
+        public class Stats2
+        {
+            public TotalValue totalValue { get; set; }
+            public TotalItems totalItems { get; set; }
+        }
+
+        public class Stats
+        {
+            public Stats2 stats { get; set; }
+        }
+
+        public class OrderResponse
+        {
+            public List<Order> list { get; set; }
+            public List<Facet> facets { get; set; }
+            public Paging paging { get; set; }
+            public Stats stats { get; set; }
+        }
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VTexConnector.Entity;
 
 namespace VTexConnector.CatalogSystem
 {
@@ -10,7 +11,14 @@ namespace VTexConnector.CatalogSystem
     {
         public Sku() : base()
         {
-            throw new NotImplementedException("To be develop!");
+        }
+
+
+        public async Task<SkuResponse> GetBySkuIdAsync(int skuId)
+        {
+            string skuUrl = Util.FormatUrl(Consts.SKU_GETBYID);
+            skuUrl = skuUrl.Replace("{{skuId}}", skuId.ToString());
+            return await GetObjectFromUri<SkuResponse>(skuUrl);
         }
     }
 }
