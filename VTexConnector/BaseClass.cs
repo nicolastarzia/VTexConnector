@@ -53,10 +53,20 @@ namespace VTexConnector
         protected async Task<T> GetObjectFromUri<T>(string productUri)
         {
             var strRetorno = await this.HttpClient.GetStringAsync(productUri);
-
             return JsonConvert.DeserializeObject<T>(strRetorno);
         }
 
+
+        /// <summary>
+        /// Return Oject stream 
+        /// </summary>
+        /// <param name="productUri">URL to find object</param>
+        /// <returns></returns>
+        protected async Task<HttpResponseMessage> GetResponseMessageFromUri(string productUri)
+        {
+            var strRetorno = await this.HttpClient.GetAsync(productUri);
+            return strRetorno;
+        }
 
         /// <summary>
         /// Post object to Uri 

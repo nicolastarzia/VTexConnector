@@ -15,18 +15,18 @@ namespace VTexConnector.OMS
         {
         }
 
-        public async Task<Order> GetOrderByIdAsync(int orderId)
+        public async Task<Entity.GetOrder.Order> GetOrderByIdAsync(int orderId)
         {
             string orderUrl = Util.FormatUrl(Consts.OMS_GETORDER);
             orderUrl = orderUrl.Replace("{{orderId}}", orderId.ToString());
-            return await GetObjectFromUri<Order>(orderUrl);
+            return await GetObjectFromUri<Entity.GetOrder.Order>(orderUrl);
         }
 
-        public async Task<OrderResponse> ListOrdersByStatusAsync(string orderStatus)
+        public async Task<Entity.OrderList.ListOrder> ListOrdersByStatusAsync(string orderStatus)
         {
             string orderUrl = Util.FormatUrl(Consts.OMS_LISTORDERS);
             orderUrl += "?f_status=" + orderStatus;
-            return await GetObjectFromUri<OrderResponse>(orderUrl);
+            return await GetObjectFromUri<Entity.OrderList.ListOrder>(orderUrl);
         }
 
         public async Task<bool> ChangeOrderStateAsync(int orderId, string status)

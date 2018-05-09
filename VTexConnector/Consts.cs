@@ -26,5 +26,8 @@ namespace VTexConnector
 
         internal static string INVENTORY_UPDATEINVENTORYBYSKUWAREHOUSE = "http://logistics.{{environment}}.com.br/api/logistics/pvt/inventory/skus/{{skuId}}/warehouses/{{warehouseId}}?an={{accountName}}";
         internal static string INVENTORY_GETBYSKU = "http://logistics.{{environment}}.com.br/api/logistics/pvt/inventory/skus/{{skuId}}?an={{accountName}}";
+
+
+        internal static string SEARCH_PRODUCTSEARCH = "http://{{accountName}}.{{environment}}.com.br/api/catalog_system/pub/products/search/{{search}}";
     }
 }

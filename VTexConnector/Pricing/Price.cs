@@ -15,21 +15,7 @@ namespace VTexConnector.Pricing
         {
         }
 
-        public async Task<PriceModel> GetPriceAsync(int id)
-        {
-            string productUrl = Util.FormatUrl(Consts.PRICE_GETPRICE);
-            productUrl = productUrl.Replace("{{itemId}}", id.ToString());
-            return await GetObjectFromUri<PriceModel>(productUrl);
-        }
-
-        public async Task<List<PriceModel>> GetFixedPricesAsync(int id)
-        {
-            string productUrl = Util.FormatUrl(Consts.PRICE_GETFIXEDPRICES);
-            productUrl = productUrl.Replace("{{itemId}}", id.ToString());
-            return await GetObjectFromUri<List<PriceModel>>(productUrl);
-        }
-
-        public async Task<bool> CreateEditPriceAsync(int itemId, PriceModel price)
+        public async Task<bool> CreateEditPriceAsync(int itemId, SetPriceModel price)
         {
             string productUrl = Util.FormatUrl(Consts.PRICE_CREATEEDITPRICES);
             productUrl = productUrl.Replace("{{itemId}}", itemId.ToString());
